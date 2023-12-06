@@ -1,0 +1,348 @@
+:root{
+    --main-radius: 5px;
+    --main-padding:5px;
+    --blue: #1e90ff;
+    --white: #ffffff; 
+    --yellowish: #F7C600;
+}
+
+html {
+    font-family: Georgia, serif;
+    background: rgb(185, 217, 235) url(background.png) repeat;
+}
+
+body {
+    margin: 0px; 
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+    /* Below was unnecessary 
+    grid-template-rows: 1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr
+                        1fr;
+    */
+
+    /* Below expands horizontally using LCM of column widths from different sections */
+    /* i.e. it only needs widths of 2 and 3, so the solution is to use 2*3=6 units of space. */
+    grid-template-areas:
+    "nav nav nav nav nav nav"
+    "exp exp pro pro edu edu"
+    "abo abo blo blo foo foo"
+    "main main main main main main"
+    "experiences experiences experiences experiences experiences experiences"
+    "experiences1 experiences1 experiences1 experiences2 experiences2 experiences2"
+    "projects projects projects projects projects projects"
+    "education education education education education education"
+    "school1 school1 school1 school1desc school1desc school1desc"
+    "school2 school2 school2 school2desc school2desc school2desc"
+    "about about about about about about"
+    "blog blog blog blog blog blog"
+    "footer footer footer footer footer footer";
+    /* grid-gap: 0.5rem; */
+    font-family: Georgia, serif;
+    font-size: 1em;
+    color: #000000;
+}
+
+nav, #exp, #pro, #edu, #abo, #blo, #foo, #about, #blog {
+    /* background: #52489c; */
+    background: #ffffff;
+    grid-area: nav;
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+
+#about p, #blog p {
+    padding-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#abo, #blo, #foo {
+    padding-bottom: 1.4em;
+}
+
+#exp {
+    grid-area: exp;
+}
+
+#pro {
+	grid-area: pro;
+}
+ 
+#edu {
+	grid-area: edu;
+}
+ 
+#abo {
+	grid-area: abo;
+}
+ 
+#blo {
+	grid-area: blo;
+}
+ 
+#foo {
+	grid-area: foo;
+}
+
+main{
+    /* background: #4062bb; */
+    background: #ffffff;
+    grid-area: main;
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+
+#experiences{
+    /* background: #4062bb; */
+    background: #ffffff;
+    grid-area: experiences;
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+
+#experiences1, #experiences2 {
+    /* background: #4062bb; */
+    background: #ffffff;
+    grid-area: experiences;
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+
+#experiences1 {
+    grid-area: experiences1;
+}
+
+#experiences2 {
+    grid-area: experiences2;
+}
+
+#projects {
+    /* background: #4062bb; */
+    background: #ffffff;
+    grid-area: projects;
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+
+#education {
+    /* background: #4062bb; */
+    background: #ffffff;
+    grid-area: education;
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+
+#school1, #school2, #school1desc, #school2desc {
+    background: #ffffff;
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+
+#school1desc, #school2desc {
+    padding-top: 2em;
+}
+
+#school1 {
+    grid-area: school1;
+}
+
+#school2 {
+    grid-area: school2;
+}
+
+#school1desc {
+    grid-area: school1desc;
+}
+
+#school2desc {
+    grid-area: school2desc;
+}
+
+#about {
+    grid-area: about;
+}
+
+#blog {
+    grid-area: blog;
+}
+
+footer{
+    background: #f45b69;
+    grid-area: footer;
+    border-bottom-left-radius: var(--main-radius);
+    border-bottom-right-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+.header {
+    margin-top: 0px;
+    text-align: center;
+    padding-left: 0px;
+    background: rgb(45, 42, 98);
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    margin-bottom: 0px;
+    font-family: Arial, sans-serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(247, 247, 247);
+}
+
+.contents {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    row-gap: 20px;
+    text-align: center;
+}
+
+.contents a {
+    padding: 8px;
+    border-radius: 7px;
+    background: linear-gradient(rgb(155, 155, 155), white, rgb(155, 155, 155));
+    text-decoration: none;
+    font-variant: small-caps;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(45, 42, 98);
+}
+
+main img {
+    text-align: center;
+    margin-top: 1em;
+    width: 350px;
+    filter: saturate(1.2);
+    background-color: rgb(45, 42, 98);
+    padding: 7px;
+}
+
+.experience-column {
+    flex: 50%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.experience-column > h3 {
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+.experience-column > p {
+    margin: 0;
+}
+
+.project-container {
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    margin-top: 0.7em;
+    align-items: center;
+    border: 2px solid black;
+}
+
+#projwithimg img {
+    height: 100px;
+}
+
+.projectdetails {
+    flex: 50%;
+}
+
+#projwithimg {
+    text-align: right;
+    margin-right: 15%;
+}
+
+#school1 img {
+    height: 150px;
+}
+
+#school2 img {
+    height: 150px;
+}
+
+footer {
+    background-color: rgb(45, 42, 98);
+    text-align: center;
+}
+
+footer #github {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    float: left;
+    margin-left: 1em;
+    color: white;
+}
+
+footer #x {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    float: right;
+    margin-right: 1em;
+    color: white;
+}
+
+.footerp {
+    display: flex;
+    margin-top: auto;
+    vertical-align: middle;
+    color: white;
+    margin-top: 0.7em;
+    margin-bottom: 0em;
+    text-align: center;
+}
+
+footer img {
+    width: 100px;
+}
+
+.clear {
+    clear: both;    
+}
+/* mobile layout */
+@media screen and (max-width: 1100px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer #github {
+        float: none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    footer #x {
+        float: none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .footerp {
+        display: block;
+    }
+
+    main img {
+        width: 70%;
+    }
+}
